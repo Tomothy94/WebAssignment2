@@ -11,6 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/* Website Homepage */
+Route::get('/', 'HomeController@showWelcome')->name('index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/teampage', 'TeamController@showTeamPage')->name('teampage');
+
+Route::get('/fixtures', 'TeamController@viewFixtures')->name('fixtures');
+
+Route::get('/players', function()
+{
+    return View::make('players');
+});
+
+Route::get('/teampage/createteam', function()
+           {
+    return View::make('createteam');
 });
