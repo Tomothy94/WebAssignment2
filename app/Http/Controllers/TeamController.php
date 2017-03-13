@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use View;
 use Illuminate\Http\Request;
+use App\Team;
 
 class TeamController extends Controller
 {
@@ -11,6 +12,7 @@ class TeamController extends Controller
     public function showTeamPage()
     {
         return View::make('teampage');
+        
     }
     
     public function viewFixtures()
@@ -18,4 +20,10 @@ class TeamController extends Controller
         return View::make('fixtures');
     }
     
+    public function showTeams()
+    {
+            $teams = Team::all();
+            return view('teampage', compact('teams'));
+
+    }
 }

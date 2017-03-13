@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers;
+use Illuminate\Http\Request;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,11 +16,12 @@
 /* Website Homepage */
 Route::get('/', 'HomeController@showWelcome')->name('index');
 
-Auth::routes();
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/teampage', 'TeamController@showTeamPage')->name('teampage');
+Route::get('/teampage', 'TeamController@showTeams')->name('teampage');
 
 Route::get('/fixtures', 'TeamController@viewFixtures')->name('fixtures');
 
@@ -31,3 +34,4 @@ Route::get('/teampage/createteam', function()
            {
     return View::make('createteam');
 });
+Auth::routes();

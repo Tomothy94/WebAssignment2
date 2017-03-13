@@ -20,7 +20,7 @@ class WebController extends BaseController {
     
     public static function GetData(){
         
-        $result =  DB::connection('mysql')->select('select '$TeamName' from teams');
+      //  $result =  DB::connection('mysql')->select('select '$TeamName' from teams');
         
         return "hello";
 
