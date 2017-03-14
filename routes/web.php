@@ -23,12 +23,14 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/teampage', 'TeamController@showTeams')->name('teampage');
 
-Route::get('/fixtures', 'TeamController@viewFixtures')->name('fixtures');
 
-Route::get('/players', function()
-{
-    return View::make('players');
-});
+Route::get('/fixture', 'FixtureController@viewFixtures')->name('fixtures');
+
+
+
+Route::get('/players', 'PlayerController@showPlayers')->name('players');
+
+
 
 Route::get('/teampage/createteam', function()
            {

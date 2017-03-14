@@ -32,6 +32,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
+                        
                     </button>
 
                     <!-- Branding Image -->
@@ -51,6 +52,8 @@
                         <li><a class ="navpadding"  href="{{route('index')}}">Home</a></li>
                         <li><a class ="navpadding"  href="{{route('fixtures')}}">Fixtures</a></li>
                         <li><a class ="navpadding"  href="{{route('teampage')}}">Team Page</a></li>
+                        <li><a class ="navpadding"  href="{{route('players')}}">Player Page</a></li>
+                        
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>

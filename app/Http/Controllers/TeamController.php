@@ -15,11 +15,6 @@ class TeamController extends Controller
         
     }
     
-    public function viewFixtures()
-    {
-        return View::make('fixtures');
-    }
-    
     public function showTeams()
     {
             $teams = Team::all();
