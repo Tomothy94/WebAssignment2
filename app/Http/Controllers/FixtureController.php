@@ -9,8 +9,12 @@ class FixtureController extends Controller
 {   
     public function showFixtures()
     {
-        return View::make('fixture');
+        return View::make('fixtures');
     }
+    public function showCreateFixture(){
+        return View::make('createfixture');
+    }
+    
     
     public function viewFixtures()
     {
@@ -18,4 +22,20 @@ class FixtureController extends Controller
             return view('fixtures', compact('fixtures'));
 
     }
+    
+     public function createFixture(Request $request)
+    {
+        // Validate the request...
+
+        $fixtures = new fixture;
+
+        $fixtures->HomeTeam = $request->hteam;
+        $fixtures->AwayTeam = $request->ateam;
+
+        $fixtures->save();
+        
+        return redirect()->route('fixtures');
+
+    }
+    
 }

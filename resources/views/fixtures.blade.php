@@ -3,6 +3,7 @@
 	<div class="welcome">
 	   <h2> Welcome to the fixtures page! </h2>	
         <h1>List all Fixtures</h1>
+         <a href="http://localhost:8000/fixture/createfixture" id="linkid">Create a fixture</a>
         <h1>
         @foreach ($fixtures as $fixture)
         <p>      
