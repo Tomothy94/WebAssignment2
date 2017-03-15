@@ -4,10 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Team extends Model
 {
    //Set Model Table
     protected $table = 'teams';
+    
+    public $timestamps = false;
+    
     
     //Set Model Primary Key
     protected $primaryKey = 'TeamID';

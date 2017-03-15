@@ -15,10 +15,29 @@ class TeamController extends Controller
         
     }
     
+    public function showCreateTeamPage(){
+        return View::make('createteam');
+    }
+    
     public function showTeams()
     {
             $teams = Team::all();
             return view('teampage', compact('teams'));
+        
+
+    }
+    public function createTeam(Request $request)
+    {
+        // Validate the request...
+
+        $teams = new Team;
+
+        $teams->TeamName = $request->tname;
+
+        $teams->save();
+        
+        return redirect()->route('teampage');
 
     }
 }
+

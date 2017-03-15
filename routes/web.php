@@ -15,25 +15,12 @@ use Illuminate\Http\Request;
 
 /* Website Homepage */
 Route::get('/', 'HomeController@showWelcome')->name('index');
-
-
-
-
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/teampage', 'TeamController@showTeams')->name('teampage');
-
-
 Route::get('/fixture', 'FixtureController@viewFixtures')->name('fixtures');
-
-
-
 Route::get('/players', 'PlayerController@viewPlayers')->name('players');
+Route::get('/teampage/createteam','TeamController@showCreateTeamPage')->name('createteam');
 
+Route::post('/addteam', array('uses' => 'TeamController@createTeam'));
 
-
-Route::get('/teampage/createteam', function()
-           {
-    return View::make('createteam');
-});
 Auth::routes();
