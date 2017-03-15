@@ -28,7 +28,7 @@ Route::get('/fixture', 'FixtureController@viewFixtures')->name('fixtures');
 
 
 
-Route::get('/players', 'PlayerController@showPlayers')->name('players');
+Route::get('/players', 'PlayerController@viewPlayers')->name('players');
 
 
 

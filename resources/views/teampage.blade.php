@@ -13,7 +13,7 @@
             <a href="{{url('teams/'.$team->TeamID)}}">{{$team->TeamName}}</a>        
         </p>
     @endforeach
-        </h1>
+        
         
 	</div>
 @endsection
