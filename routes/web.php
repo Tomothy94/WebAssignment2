@@ -21,7 +21,10 @@ Route::get('/fixtures', 'FixtureController@viewFixtures')->name('fixtures');
 Route::get('/players', 'PlayerController@viewPlayers')->name('players');
 Route::get('/teampage/createteam','TeamController@showCreateTeamPage')->name('createteam');
 Route::get('fixture/createfixture','FixtureController@showCreateFixture')->name('createfixture');
+Route::get('players/createplayer', 'PlayerController@showCreatePlayer')->name('createplayer');
 
 Route::post('/addteam', array('uses' => 'TeamController@createTeam'));
 Route::post('/addfixture', array('uses' => 'FixtureController@createFixture'));
+Route::post('/addplayer', array('uses' => 'PlayerController@createPlayer'));
+
 Auth::routes();

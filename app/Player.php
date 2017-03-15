@@ -9,6 +9,7 @@ class Player extends Model
    //Set Model Table
     protected $table = 'players';
     
+    public $timestamps = false;
     //Set Model Primary Key
     protected $primaryKey = 'PlayerID';
     

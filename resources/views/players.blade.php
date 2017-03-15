@@ -2,6 +2,8 @@
 @section('content')
 	<div class="welcome">
 	   <h2> Welcome to the Players page! </h2>	
+         <a href="http://localhost:8000/players/createplayer" id="linkid">Create a player</a>
+        
         <h1>List all Players</h1>
         @foreach ($players as $player)
         <p>
