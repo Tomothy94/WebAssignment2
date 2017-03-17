@@ -31,6 +31,24 @@ class TeamController extends Controller
         $Team->delete();
         return redirect()->route('teampage');
     }
+    
+    public function updateTeam(Request $request){
+        $Team = Team::findOrFail($request->id);
+        $Team->TeamName = $request->TeamName;
+        $Team->update();
+        return redirect()->route('teampage');
+    }
+    
+    
+    public function showOneTeam(Request $request, $id)
+    {
+        $team = Team::findorFail($id);
+        
+        return view('editteam', compact('team'));
+    }
+    
+    
+    
     public function createTeam(Request $request)
     {
         // Validate the request...

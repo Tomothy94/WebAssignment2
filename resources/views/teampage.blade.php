@@ -19,14 +19,13 @@
        <h1>List all Teams</h1>
         @foreach ($teams as $team)
         <p>
-            <a href="{{url('teams/'.$team->TeamID)}}">{{$team->TeamName}}</a>    
+            <a href="{{url('teampage/editteam/'.$team->TeamID)}}">{{$team->TeamName}}</a>    
             <p>
             <form method="post" action="{{url('deleteteam/'.$team->TeamID)}}">       
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit" class="btn btn-primary">Delete</button>
             </form>
-            </p>
-        </p>
+           
     @endforeach
         
         

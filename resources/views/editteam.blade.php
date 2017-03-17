@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
 	<div class="welcome">
-  <b>    <p>Create a team:</p> </b>
+  <b>    <p>Edit a team:</p> </b>
 <!--        <button type="button">Add!</button>-->
         
         
-<form action="/addteam" method="post">
-  Team Name: <input type="text" name="tname" value="{{$team->TeamName}}"><br>
-    
+<form action="/updateteam" method="post">
+  Team Name: <input type="text" name="TeamName" value="{{$team->TeamName}}"><br>
+  <input type="hidden" name='id' value="{{$team->TeamID}}"/>
   <input type="submit" value="Submit">
   <input type="hidden" name="_token" value="{{ csrf_token() }}">
 </form>
