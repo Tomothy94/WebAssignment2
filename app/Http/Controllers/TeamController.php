@@ -23,8 +23,13 @@ class TeamController extends Controller
     {
             $teams = Team::all();
             return view('teampage', compact('teams'));
-        
-
+    
+    }
+    
+    public function deleteTeams(Request $request, $id){
+        $Team = Team::findOrFail($id);
+        $Team->delete();
+        return redirect()->route('teampage');
     }
     public function createTeam(Request $request)
     {

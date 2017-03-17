@@ -7,8 +7,9 @@
         <h1>List all Players</h1>
         @foreach ($players as $player)
         <p>
-            <a href="{{url('teams/'.$player->PlayerID)}}">{{$player->PlayerName}}</a>        
+            <a href="{{url('teams/'.$player->PlayerID)}}">{{$player->PlayerName}}</a>
         </p>
+       
     @endforeach
       
         <p>
