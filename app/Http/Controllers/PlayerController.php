@@ -26,6 +26,22 @@ class PlayerController extends Controller
 
     }
     
+    
+    /**
+    *   Edit Player Form
+    **/
+    public function edit($id)
+    {
+        $player = Player::findorFail($id);
+        return view('editplayer', compact('player'));
+    }
+    
+     public function updatePlayer(Request $request, $id){
+        $player = Player::findOrFail($id);
+        $player->update($request->all());
+        return redirect()->route('players');
+    }
+    
      public function createPlayer(Request $request)
     {
         // Validate the request...
@@ -40,5 +56,12 @@ class PlayerController extends Controller
         
         return redirect()->route('players');
 
+    }
+    
+    public function delete($id)
+    {
+        $player = Player::findorFail($id);
+        $player->delete();
+        return back();
     }
 }

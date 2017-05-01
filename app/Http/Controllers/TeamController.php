@@ -43,7 +43,6 @@ class TeamController extends Controller
     public function showOneTeam(Request $request, $id)
     {
         $team = Team::findorFail($id);
-        
         return view('editteam', compact('team'));
     }
     

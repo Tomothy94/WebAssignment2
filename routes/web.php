@@ -24,10 +24,15 @@ Route::get('/teampage/editteam/{id}','TeamController@showOneTeam')->name('editte
 Route::get('fixture/createfixture','FixtureController@showCreateFixture')->name('createfixture');
 Route::get('players/createplayer', 'PlayerController@showCreatePlayer')->name('createplayer');
 
+
 Route::post('/addteam', array('uses' => 'TeamController@createTeam'));
 Route::post('/addfixture', array('uses' => 'FixtureController@createFixture'));
 Route::post('/addplayer', array('uses' => 'PlayerController@createPlayer'));
 Route::post('/updateteam', array('uses' => 'TeamController@updateTeam'));
+
+Route::get('/player/{id}/edit', 'PlayerController@edit')->name('player.edit');
+Route::PATCH('/player/{id}/update', 'PlayerController@updatePlayer')->name('player.update');
+Route::get('/player/{id}/delete', 'PlayerController@delete')->name('player.delete');
 
 Route::post('/deleteteam/{id}','TeamController@deleteTeams');
 

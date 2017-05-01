@@ -7,10 +7,12 @@
         <h1>List all Players</h1>
         @foreach ($players as $player)
         <p>
-            <a href="{{url('teams/'.$player->PlayerID)}}">{{$player->PlayerName}}</a>
+
+            <a href="{{route('player.edit', ['id' => $player->PlayerID])}}">{{$player->PlayerName}}</a>
+            <a class="btn btn-danger" href="{{route('player.delete', ['id' => $player->PlayerID])}}">Delete Player</a>
         </p>
        
-    @endforeach
+        @endforeach
       
         <p>
             <a href="http://localhost:8000/" id="linkid">Back</a>     
