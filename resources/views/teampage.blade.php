@@ -2,6 +2,7 @@
 @section('content')
 	<div class="welcome">
 <!--        need to change these links when made -->
+        <h2> Welcome to the Teams page! </h2>	
         <p>
            <a href="http://localhost:8000/teampage/createteam" id="linkid">Create a team</a>
         </p> 

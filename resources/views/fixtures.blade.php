@@ -2,14 +2,14 @@
 @section('content')
 	<div class="welcome">
 	   <h2> Welcome to the fixtures page! </h2>	
-        <h1>List all Fixtures</h1>
+        <h1>Below all fixtures are listed! </h1>
          <a href="http://localhost:8000/fixture/createfixture" id="linkid">Create a fixture</a>
         <h1>
         @foreach ($fixtures as $fixture)
         <p>      
-            <a href="{{url('fixtures/'.$fixture->FixtureID)}}">{{$fixture->HomeTeam}}</a>
+            {{$fixture->HomeTeam}}
             VS
-            <a href="{{url('fixtures/'.$fixture->FixtureID)}}">{{$fixture->AwayTeam}}</a>      
+            {{$fixture->AwayTeam}}      
             
             
         </p>
